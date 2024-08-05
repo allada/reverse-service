@@ -39,6 +39,7 @@
     clippy::blanket_clippy_restriction_lints
 )]
 
+pub mod reverse_client;
 pub mod reverse_service;
 
 /// The value of the `upgrade` header that is used to signal

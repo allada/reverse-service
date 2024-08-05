@@ -58,7 +58,10 @@ impl<Ex, H> RootService<Ex, H> {
     /// and a client handler function to handle the new client
     /// service that is created after the handshake and upgrade.
     #[inline]
-    pub const fn new(h2_client_builder: Http2Builder<Ex>, client_handler: H) -> Self {
+    pub const fn new(h2_client_builder: Http2Builder<Ex>, client_handler: H) -> Self
+    where
+        H: Fn(ClientService) + Clone,
+    {
         Self {
             builder: h2_client_builder,
             client_handler,

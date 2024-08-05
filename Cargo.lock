@@ -219,6 +219,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "httparse"
+version = "1.9.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0fcc0b4a115bf80b728eb8ea024ad5bd707b615bfed49e0665b6e0f86fd082d9"
+
+[[package]]
 name = "httpdate"
 version = "1.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -236,25 +242,13 @@ dependencies = [
  "h2",
  "http",
  "http-body",
+ "httparse",
  "httpdate",
+ "itoa",
  "pin-project-lite",
  "smallvec",
  "tokio",
  "want",
-]
-
-[[package]]
-name = "hyper-util"
-version = "0.1.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3ab92f4f49ee4fb4f997c784b7a2e0fa70050211e0b6a287f898c3c9785ca956"
-dependencies = [
- "bytes",
- "futures-util",
- "http",
- "http-body",
- "hyper",
- "pin-project-lite",
 ]
 
 [[package]]
@@ -371,11 +365,10 @@ version = "0.1.0"
 dependencies = [
  "bytes",
  "futures",
+ "http",
  "http-body-util",
  "hyper",
- "hyper-util",
  "pin-project",
- "tokio",
  "tonic",
  "tower-service",
 ]
